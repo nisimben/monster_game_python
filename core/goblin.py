@@ -15,7 +15,7 @@ attack()
 """
 class Goblin(Creatcher):
     def __init__(self, name: str):
-        hp = random.randint(5, 10)
+        hp = 20
         speed = random.randint(5, 10)
         power = random.randint(5, 10)
         armor_rating = 1

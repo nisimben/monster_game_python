@@ -16,9 +16,9 @@ class Player(Creatcher):
     def speak(self):
         print(f"Hello my name is {self.name} and I am a {self.profession}")
         
-    def attack(self,monster,number_dice):
-        if monster.armor_rating > self.speed + number_dice:
-            print(f"{self.name} missed {monster.name}")
+    def attack(self,target,number_dice):
+        if target.armor_rating > self.speed + number_dice:
+            print(f"{self.name} missed {target.name}")
             return False
         else:
             return True
