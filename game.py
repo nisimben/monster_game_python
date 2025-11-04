@@ -30,13 +30,13 @@ def show_menu():
 
             
 def calculate_monster_damage(monster):
-    damamge = roll_dice(6)
+    damage = monster.power + roll_dice(6)
     if monster.weapon == "Axe":
-        return damamge * 1.5
+        return damage * 1.5
     elif monster.weapon == "Knife":
-        return damamge * 0.5
+        return damage * 0.5
     else:
-        return damamge       
+        return damage       
 
 def choose_random_monster():
     return random.choice(["orc", "goblin"])
@@ -83,8 +83,8 @@ def start_game():
         monster = Orc("Orc")
     elif monster_type == "goblin":
         monster = Goblin("Goblin")
-    turn_player = choose_turn(player,monster)
     while player.hp > 0 and monster.hp > 0:
+        turn_player = choose_turn(player,monster)
         battle(player, monster, turn_player)
         get_status(player,monster)
         
